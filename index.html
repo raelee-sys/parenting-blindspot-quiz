@@ -746,7 +746,7 @@
 
       <div class="next-step">
         <p>A detailed email with reflection questions is on its way to your inbox. In the meantime, explore the full assessment to see all three lenses in action.</p>
-        <a href="https://innerlifeparenting.com" class="btn-ghost" target="_blank" rel="noopener">Explore the full assessment <span class="arrow">&rarr;</span></a>
+        <a href="https://app.paperbell.com/checkout/packages/221835" class="btn-ghost" target="_blank" rel="noopener">Explore the full assessment <span class="arrow">&rarr;</span></a>
       </div>
 
       <div class="retake">
@@ -907,7 +907,6 @@
       try {
         const response = await fetch(ZAPIER_WEBHOOK_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: email,
             age: age,
