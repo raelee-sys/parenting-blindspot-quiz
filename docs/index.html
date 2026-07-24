@@ -371,17 +371,18 @@
       const missingLens = sorted[0][0];
 
       try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('age', age);
+        formData.append('challenge', challenge);
+        formData.append('missing_lens', missingLens);
+        formData.append('attachment_score', answers.attachment);
+        formData.append('vulnerability_score', answers.vulnerability);
+        formData.append('maturity_score', answers.maturity);
+
         const response = await fetch(FORM_SUBMIT_URL, {
           method: 'POST',
-          body: JSON.stringify({
-            email: email,
-            age: age,
-            challenge: challenge,
-            missing_lens: missingLens,
-            attachment_score: answers.attachment,
-            vulnerability_score: answers.vulnerability,
-            maturity_score: answers.maturity
-          })
+          body: formData
         });
 
         if (!response.ok) throw new Error('Submission failed');
@@ -441,9 +442,4 @@
 
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
     document.getElementById('submitEmailBtn').addEventListener('click', submitEmail);
-    document.getElementById('emailInput').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') submitEmail();
-    });
-  </script>
-</body>
-</html>
+    document.getElementById('emai
