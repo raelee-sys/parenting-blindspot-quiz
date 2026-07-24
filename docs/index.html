@@ -226,7 +226,7 @@
   </div>
 
   <script>
-    const GOOGLE_SHEET_URL = 'https://script.google.com/a/macros/innerlifeparenting.com/s/AKfycbybKnvWhqm5QtVOGiiWcCElPK3Yuvvw3Y6QJT8AFdZ03WQ3v8tPhgwB5iO-onEy3N9t3Q/exec';
+    const FORM_SUBMIT_URL = 'https://formsubmit.co/raelee@innerlifeparenting.com';
 
     const questions = [
       {
@@ -371,7 +371,7 @@
       const missingLens = sorted[0][0];
 
       try {
-        const response = await fetch(GOOGLE_SHEET_URL, {
+        const response = await fetch(FORM_SUBMIT_URL, {
           method: 'POST',
           body: JSON.stringify({
             email: email,
