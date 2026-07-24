@@ -816,7 +816,7 @@
     let currentQ = 0;
     let answers = { attachment: 0, vulnerability: 0, maturity: 0 };
 
-    const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/28260889/4uv1zyx/';
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/d/AKfycbwgXiNNYStAYjTRAubSE5gldJ1xW8LZmxDQ9SjAnX1temm-ShPuYG6TfEpNd2tJggBwEw/usercodeapp';
 
     const landing = document.getElementById('landing');
     const quiz = document.getElementById('quiz');
@@ -905,7 +905,7 @@
       const missingLens = sorted[0][0];
 
       try {
-        const response = await fetch(ZAPIER_WEBHOOK_URL, {
+        const response = await fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
           body: JSON.stringify({
             email: email,
@@ -974,8 +974,4 @@
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
     document.getElementById('submitEmailBtn').addEventListener('click', submitEmail);
     document.getElementById('emailInput').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') submitEmail();
-    });
-  </script>
-</body>
-</html>
+      if (e.key =
